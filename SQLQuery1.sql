@@ -1,0 +1,1 @@
+﻿ALTER TABLE Lent_books ADD fineAmount DECIMAL;

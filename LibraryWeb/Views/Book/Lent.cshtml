@@ -1,0 +1,60 @@
+﻿@model IEnumerable<LentBooks>
+@{
+    ViewData["Title"] = "Issued Books";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Issued Books</h2>
+        </div>
+        <div class="col-6 text-end">
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Book ID
+                </th>
+                <th>
+                    Issue Date
+                </th>
+                <th>
+                    Due Date
+                </th>
+                <th>
+                    Member ID
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="20%">
+                        @obj.Id
+                    </td>
+                    <td width="40%">
+                        @obj.Lent_Date
+                    </td>
+                    <td width="30%">
+                        @obj.Due_Date
+                    </td>
+                    <td width="20%">
+                        @obj.Member_Id
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Lent" asp-action="ReturnBook" asp-route-id="@obj.Id"
+                               class="btn btn-primary mx-2">Return</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

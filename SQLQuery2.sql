@@ -1,0 +1,1 @@
+﻿ALTER TABLE Members ADD Lent_Books INT;

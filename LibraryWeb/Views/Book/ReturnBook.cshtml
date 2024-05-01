@@ -1,0 +1,26 @@
+﻿@model LentBooks
+<form method="post" asp-action="ReturnBookPOST">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Return</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label class="text-white" asp-for="Member_Id"></label>
+            <input asp-for="Member_Id" disabled class="form-control" />
+
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+        <a asp-controller="Book" asp-action="Lent" class="btn btn-secondary" style="width:150px">
+            Back
+        </a>
+    </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
